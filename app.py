@@ -78,6 +78,9 @@ if "api_calls_count" not in st.session_state:
 if "current_model" not in st.session_state:
     st.session_state.current_model = "deepseek-chat"
 
+if "show_reasoning" not in st.session_state:
+    st.session_state.show_reasoning = False
+
 # Sidebar สำหรับการตั้งค่า
 with st.sidebar:
     st.markdown("### ⚙️ การตั้งค่า")
@@ -85,7 +88,8 @@ with st.sidebar:
     # เลือกโมเดล AI
     model_options = {
         "deepseek-chat": "DeepSeek Chat",
-        "deepseek-coder": "DeepSeek Coder"
+        "deepseek-coder": "DeepSeek Coder", 
+        "deepseek-reasoner": "DeepSeek R1 (Reasoning)"
     }
     
     selected_model = st.selectbox(
